@@ -13,10 +13,30 @@ namespace Domain
 
         private Poll poll;
 
+        public Poll Poll
+        {
+            get
+            {
+                return this.poll;
+            }            
+        }
+
         public PollResult(Poll poll)
         {
-            this.poll = poll;            
-        }        
+            this.poll = poll;
+            foreach (Question question in answers.Keys) 
+            {
+                answers.Add(question, null);
+            }
+        }
+
+        public void AnswerTo(Question question, string answer)
+        {
+            if (answers.ContainsKey(question)) 
+            {
+                answers[question] = answer;
+            }
+        }
 
     }
 }

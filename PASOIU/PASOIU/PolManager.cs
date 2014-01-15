@@ -9,7 +9,20 @@ namespace Domain
     class PolManager
     {
 
+        public Poll getPoll(string name)
+        {
+            return null;
+        }
 
+        public Poll createPoll(string name) 
+        {
+            return new Poll(name);
+        }
+
+        public void removePoll(string name) 
+        { 
+            
+        }
 
     }
 }

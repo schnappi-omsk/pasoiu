@@ -17,8 +17,7 @@ namespace Domain
             get
             {
                 return name;
-            }
-            private set;
+            }            
         }
 
         private List<Question> questions = new List<Question>();

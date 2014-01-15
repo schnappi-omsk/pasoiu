@@ -13,7 +13,7 @@ namespace Domain
 
         private string answer;
 
-        public string Answer
+        public string AnswerValue
         {
             get
             {

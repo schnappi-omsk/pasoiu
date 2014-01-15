@@ -7,3 +7,8 @@ C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.csproj.GenerateResource.Cache
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.exe
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.pdb
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Debug\sociologist.sdf
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Debug\PASOIU.exe.manifest
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Debug\PASOIU.application
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.exe.manifest
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.application
