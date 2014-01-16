@@ -9,7 +9,7 @@ namespace Domain
     class Answer
     {
 
-        private Question question;
+        private IQuestion question;
 
         private string answer;
 
@@ -26,7 +26,7 @@ namespace Domain
             }
         }
 
-        public Answer(Question question) {
+        public Answer(IQuestion question) {
             this.question = question;
         }
 

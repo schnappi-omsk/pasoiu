@@ -9,7 +9,9 @@ namespace Domain
     class PollResult
     {
 
-        private Dictionary<Question, string> answers = new Dictionary<Question, string>();
+        private Dictionary<IQuestion, string> answers = new Dictionary<IQuestion, string>();
+
+        private Dictionary<IQuestion, Alternative> choices = new Dictionary<IQuestion, Alternative>();
 
         private Poll poll;
 
@@ -24,18 +26,45 @@ namespace Domain
         public PollResult(Poll poll)
         {
             this.poll = poll;
-            foreach (Question question in answers.Keys) 
+            foreach (IQuestion question in answers.Keys) 
             {
                 answers.Add(question, null);
             }
         }
 
-        public void AnswerTo(Question question, string answer)
+        public void SelectAlternative(IQuestion question, Alternative alternative) {
+            if (poll.HasAlternative(question, alternative) && !choices.ContainsKey(question))
+            {
+                choices.Add(question, alternative);
+            }
+        }
+
+        public void AnswerTo(IQuestion question, string answer)
         {
             if (answers.ContainsKey(question)) 
             {
                 answers[question] = answer;
             }
+        }
+
+        public Dictionary<IQuestion, string> GetAnswers() 
+        {
+            return answers;
+        }
+
+        public Dictionary<IQuestion, Alternative> GetChoices() 
+        {
+            return choices;
+        }
+
+        public IReadOnlyList<Alternative> ChoicesByQuestion(IQuestion question)
+        {
+            List<Alternative> result = new List<Alternative>();
+            if (choices.ContainsKey(question))
+            {
+                result.Add(choices[question]);
+            }
+            return result.AsReadOnly();
         }
 
     }

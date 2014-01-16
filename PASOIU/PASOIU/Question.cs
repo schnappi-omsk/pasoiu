@@ -6,18 +6,24 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Question
+    class Question : IQuestion
     {
 
-        private string text;        
+        private string text;
 
-        public string Text()
+        public string Text 
         {
-            return text;
+            get 
+            {
+                return this.text;
+            }
+            set
+            {
+                this.text = value;
+            }
         }
 
-        public void Answer(string result)
-        {
-        }
+        
+
     }
 }
