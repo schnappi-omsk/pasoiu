@@ -75,6 +75,8 @@
   <ItemGroup>
     <Compile Include="Alternative.cs" />
     <Compile Include="Answer.cs" />
+    <Compile Include="DBConnector.cs" />
+    <Compile Include="IPoll.cs" />
     <Compile Include="IQuestion.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -83,6 +85,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Poll.cs" />
+    <Compile Include="PollDAO.cs" />
     <Compile Include="PollResult.cs" />
     <Compile Include="PollManager.cs" />
     <Compile Include="Program.cs" />

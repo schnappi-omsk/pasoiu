@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Poll
+    class Poll : IPoll
     {
         const string WHITESPACE = "____________";
 
@@ -27,7 +27,8 @@ namespace Domain
 
         private Dictionary<IQuestion, List<Alternative>> alternatives = new Dictionary<IQuestion, List<Alternative>>();
 
-        public Poll(string name) {
+        public Poll(string name) 
+        {
             this.name = name;
         }
 

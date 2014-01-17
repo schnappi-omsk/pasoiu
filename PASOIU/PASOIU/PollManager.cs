@@ -71,16 +71,38 @@ namespace Domain
         }
 
 
+        /**
+         *  Расчет таблиц вида для открытых вопросов числового типа 
+         *  
+         *  | Текст вопроса | Минимум | Среднее | Максимум |
+         * 
+         */
         public QuestionStatistics StatsOf(IQuestion question)
-        {
-            var minimums = new Dictionary<IQuestion, double>();
-            var maximums = new Dictionary<IQuestion, double>();
-            var averages = new Dictionary<IQuestion, double>();
+        {            
+            double minimum;
+            double maximum;
+            double average;
+            double sum = 0.0;            
+            List<double> answersList = new List<double>();
+            QuestionStatistics resultSet = new QuestionStatistics();
             foreach (PollResult result in results)
-            { 
-
+            {
+                double val;
+                var answers = result.GetAnswers();                
+                if (answers.ContainsKey(question))
+                {
+                    var answer = answers[question];                    
+                    if (Double.TryParse(answer, out val))
+                    {                        
+                        answersList.Add(val);
+                    }                    
+                }
             }
-            return null;
+            minimum = answersList.Min();
+            maximum = answersList.Max();
+            average = answersList.Average();
+            resultSet.AddRecord(question.Text, minimum, average, maximum);
+            return resultSet;
         }
 
 

@@ -28,7 +28,7 @@ namespace Domain
             this.poll = poll;
             foreach (IQuestion question in answers.Keys) 
             {
-                answers.Add(question, null);
+                if (!poll.HasAlternatives(question)) answers.Add(question, null);
             }
         }
 
@@ -41,9 +41,13 @@ namespace Domain
 
         public void AnswerTo(IQuestion question, string answer)
         {
-            if (answers.ContainsKey(question)) 
+            if (answers.ContainsKey(question))
             {
                 answers[question] = answer;
+            }
+            else
+            {
+                answers.Add(question, answer);
             }
         }
 
