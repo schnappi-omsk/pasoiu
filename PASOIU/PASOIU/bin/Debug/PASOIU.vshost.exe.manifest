@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PASOIU.exe" size="23552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PASOIU.exe" size="28160">
       <assemblyIdentity name="PASOIU" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9ZhMFKljoZPTCErNYdNWdJNcYSXodIfrC/e4/jnC1Wg=</dsig:DigestValue>
+        <dsig:DigestValue>zaXhmO5AcJ2wlJZWr0P1PICs0dsJPLxXZslGnbau3Os=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,13 +79,13 @@
       <dsig:DigestValue>RXRDuqLnu6RKwYgg1Ky889zNpEOTU/nGDkgRFzQ8dHE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="sociologist.sdf" size="217088" writeableType="applicationData">
+  <file name="sociologist.sdf" size="327680" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qDKRzA1JbOD0rMY38h4qDYthyNRDdZLje4GA6xwoo8M=</dsig:DigestValue>
+      <dsig:DigestValue>r9iPY/YcP4kanUZRIUUHa/PNbVOV3142M9R2J0HssnE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

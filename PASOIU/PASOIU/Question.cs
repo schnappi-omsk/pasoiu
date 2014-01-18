@@ -11,6 +11,20 @@ namespace Domain
 
         private string text;
 
+        private int id;
+
+        public int Id 
+        {
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                this.id = value;
+            }
+        }
+
         public string Text 
         {
             get 
@@ -23,6 +37,10 @@ namespace Domain
             }
         }
 
+        public override bool Equals(object obj)
+        {
+            return this.text == ((Question)obj).text;            
+        }
         
 
     }

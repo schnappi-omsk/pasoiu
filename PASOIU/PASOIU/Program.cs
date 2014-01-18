@@ -33,6 +33,8 @@ namespace PASOIU
 
             Console.WriteLine(poll.ToString());
 
+            //var poll = new Poll("e");
+
             //var q1 = new Question();
             //q1.Text = "your name?";
             //poll.AddQuestion(q1);
@@ -40,10 +42,10 @@ namespace PASOIU
             //var q2 = new Question();
             //q2.Text = "Your age?";
             //poll.AddQuestion(q2);
-            //Alternative less18 = new Alternative(q2, 1, "< 18");
-            //Alternative less25 = new Alternative(q2, 2, "18 - 25");
-            //Alternative less40 = new Alternative(q2, 3, "25-40");
-            //Alternative more40 = new Alternative(q2, 4, " > 40");
+            //Alternative less18 = new Alternative(1, "< 18");
+            //Alternative less25 = new Alternative(2, "18 - 25");
+            //Alternative less40 = new Alternative(3, "25-40");
+            //Alternative more40 = new Alternative(4, " > 40");
             //poll.AddAllAlternatives(q2, less18, less25, less40, more40);
 
             //var q3 = new Question();
@@ -58,41 +60,54 @@ namespace PASOIU
             //q5.Text = "Have you satisfied with you work?";
             //poll.AddQuestion(q5);
 
+            //pollDAO.Update(poll);
 
-            //PollResult result = new PollResult(poll);
-            //result.AnswerTo(q1, "tst1");
-            //result.SelectAlternative(q2, less40);
-            //result.AnswerTo(q3, "40000");
-            //result.AnswerTo(q4, "80000");
-            //result.AnswerTo(q5, "yes");
+            PollResultDAO resultDao = new PollResultDAO();            
 
-            //PollResult result2 = new PollResult(poll);
-            //result2.AnswerTo(q1, "tst1");
-            //result2.SelectAlternative(q2, less40);
-            //result2.AnswerTo(q3, "20000");
-            //result2.AnswerTo(q4, "50000");
-            //result2.AnswerTo(q5, "yes");
+            PollResult result = new PollResult(poll);
+            result.AnswerTo(poll.GetQuestions()[0], "tst1");
+            result.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[2]);
+            result.AnswerTo(poll.GetQuestions()[2], "40000");
+            result.AnswerTo(poll.GetQuestions()[3], "80000");
+            result.AnswerTo(poll.GetQuestions()[4], "yes");
 
-            //PollResult result3 = new PollResult(poll);
-            //result3.AnswerTo(q1, "tst1");
-            //result3.SelectAlternative(q2, more40);
-            //result3.AnswerTo(q3, "45000");
-            //result3.AnswerTo(q4, "70000");
-            //result3.AnswerTo(q5, "no");
+            resultDao.Create(result);
 
-            //PollResult result4 = new PollResult(poll);
-            //result4.AnswerTo(q1, "tst1");
-            //result4.SelectAlternative(q2, less25);
-            //result4.AnswerTo(q3, "30000");
-            //result4.AnswerTo(q4, "40000");
-            //result4.AnswerTo(q5, "no");
+            PollResult result2 = new PollResult(poll);
+            result2.AnswerTo(poll.GetQuestions()[0], "tst1");
+            result2.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[1]);
+            result2.AnswerTo(poll.GetQuestions()[2], "20000");
+            result2.AnswerTo(poll.GetQuestions()[3], "50000");
+            result2.AnswerTo(poll.GetQuestions()[4], "yes");
 
-            //PollResult result5 = new PollResult(poll);
-            //result5.AnswerTo(q1, "tst1");
-            //result5.SelectAlternative(q2, less25);
-            //result5.AnswerTo(q3, "30000");
-            //result5.AnswerTo(q4, "50000");
-            //result5.AnswerTo(q5, "yes");            
+            resultDao.Create(result2);
+            
+            PollResult result3 = new PollResult(poll);
+            result3.AnswerTo(poll.GetQuestions()[0], "tst1");
+            result3.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[1]);
+            result3.AnswerTo(poll.GetQuestions()[2], "45000");
+            result3.AnswerTo(poll.GetQuestions()[3], "70000");
+            result3.AnswerTo(poll.GetQuestions()[4], "no");
+
+            resultDao.Create(result3);
+
+            PollResult result4 = new PollResult(poll);
+            result4.AnswerTo(poll.GetQuestions()[0], "tst1");
+            result4.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[3]);
+            result4.AnswerTo(poll.GetQuestions()[2], "30000");
+            result4.AnswerTo(poll.GetQuestions()[3], "40000");
+            result4.AnswerTo(poll.GetQuestions()[4], "no");
+
+            resultDao.Create(result4);
+
+            PollResult result5 = new PollResult(poll);
+            result5.AnswerTo(poll.GetQuestions()[0], "tst1");
+            result5.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[0]);
+            result5.AnswerTo(poll.GetQuestions()[2], "30000");
+            result5.AnswerTo(poll.GetQuestions()[3], "50000");
+            result5.AnswerTo(poll.GetQuestions()[4], "yes");
+
+            //resultDao.Create(result5);
 
             //PollManager manager = new PollManager();
             //manager.AddAllResults(result, result2, result3, result4, result5);

@@ -30,6 +30,7 @@ namespace DS
 
         public void Open() 
         {
+            if (Connection.State == ConnectionState.Open) return;
             connection.Open();
         }
 

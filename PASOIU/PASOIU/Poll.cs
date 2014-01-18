@@ -61,8 +61,9 @@ namespace Domain
 
         public bool HasAlternative(IQuestion question, Alternative alternative)
         {
-            return alternatives.ContainsKey(question) &&
-                alternatives[question].Contains(alternative);
+            return alternatives.ContainsKey(question);
+//                &&
+  //              alternatives[question].Contains(alternative);
         }
 
         public IReadOnlyList<Alternative> GetAlternatives(IQuestion question)

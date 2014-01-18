@@ -15,6 +15,20 @@ namespace Domain
 
         private Poll poll;
 
+        private int id;
+
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                this.id = value;
+            }
+        }
+
         public Poll Poll
         {
             get

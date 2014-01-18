@@ -8,6 +8,11 @@ namespace Domain
 {
     interface IQuestion
     {
+        int Id
+        {
+            get;
+            set;
+        }
 
         string Text
         {

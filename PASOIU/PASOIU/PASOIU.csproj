@@ -88,6 +88,7 @@
     <Compile Include="PollDAO.cs" />
     <Compile Include="PollResult.cs" />
     <Compile Include="PollManager.cs" />
+    <Compile Include="PollResultDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />

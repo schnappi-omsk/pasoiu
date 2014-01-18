@@ -11,15 +11,35 @@ namespace Domain
 
         private IQuestion question;
 
+        private int bid;
+
         private int id;
 
         private string text;
+
+        public Alternative(int id, string text)
+        {
+            this.id = id;
+            this.text = text;
+        }
 
         public Alternative(IQuestion question, int id, string text) 
         {
             this.question = question;
             this.id = id;
             this.text = text;
+        }
+
+        public int Bid
+        {
+            get
+            {
+                return this.bid;
+            }
+            set
+            {
+                this.bid = value;
+            }
         }
 
         public IQuestion Question 
