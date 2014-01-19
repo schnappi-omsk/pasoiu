@@ -17,6 +17,9 @@ namespace Domain
 
         private string text;
 
+        public Alternative()
+        { }
+
         public Alternative(int id, string text)
         {
             this.id = id;
@@ -48,7 +51,10 @@ namespace Domain
             {
                 return this.question;
             }
-            private set { }
+            set 
+            {
+                this.question = value;
+            }
         }
 
         public int Id 
@@ -73,6 +79,16 @@ namespace Domain
             {
                 this.text = value;
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return text == ((Alternative) obj).text;
+        }
+
+        public override int GetHashCode()
+        {
+            return text.GetHashCode();
         }
 
     }

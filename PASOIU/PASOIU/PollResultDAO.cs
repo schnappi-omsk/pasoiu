@@ -73,8 +73,8 @@ namespace DS
                 {
                     var getAnswers = String.Format("SELECT result_id, answer " + 
                         "FROM Answer_Result " + 
-                        "WHERE question_id = {0} AND alternative_id IS NULL",
-                        question.Id
+                        "WHERE question_id = {0} AND alternative_id IS NULL AND result_id = {1}",
+                        question.Id, resultSet.GetInt32(0)
                         );
                     command.CommandText = getAnswers;
                     var answerSet = command.ExecuteResultSet(ResultSetOptions.None);
@@ -85,8 +85,8 @@ namespace DS
                     }
                     var getChoices = String.Format("SELECT result_id, alternative_id " +
                         "FROM Answer_Result " +
-                        "WHERE question_id = {0} AND answer IS NULL",
-                        question.Id
+                        "WHERE question_id = {0} AND answer IS NULL AND result_id = {1}",
+                        question.Id, resultSet.GetInt32(0)
                         );
                     command.CommandText = getChoices;
                     var alternativeSet = command.ExecuteResultSet(ResultSetOptions.None);
@@ -100,12 +100,15 @@ namespace DS
                             );
                         command.CommandText = getAlt;
                         var choiceSet = command.ExecuteResultSet(ResultSetOptions.None);
+                        var choice = new Alternative();
                         while (choiceSet.Read())
                         {
-                            var choice = new Alternative(choiceSet.GetInt32(0), choiceSet.GetString(1));
-                            pollResult.SelectAlternative(question, choice);
+                            choice.Id = choiceSet.GetInt32(0);
+                            choice.Text = choiceSet.GetString(1);
+                            choice.Question = question;
                         }
-                    }
+                        pollResult.SelectAlternative(question, choice);
+                    }                                        
                 }
                 results.Add(pollResult);
             }

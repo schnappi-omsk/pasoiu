@@ -164,6 +164,23 @@ namespace DS
             return id.HasValue ? id.Value : -1;
         }
 
+        public List<Poll> GetAll()
+        {
+            var result = new List<Poll>();
+            connector.Open();
+            var command = new SqlCeCommand();
+            command.Connection = connector.Connection;
+            command.CommandText = "SELECT id, name FROM Poll";
+            var resultSet = command.ExecuteResultSet(ResultSetOptions.None);
+            while (resultSet.Read())
+            {
+                var poll = new Poll(resultSet.GetString(1));
+                result.Add(poll);
+            }
+            connector.Close();
+            return result;
+        }
+
         private bool IsQuestionStored(IQuestion question, int pollId)
         {
             connector.Open();

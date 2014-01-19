@@ -98,10 +98,13 @@ namespace Domain
                     }                    
                 }
             }
-            minimum = answersList.Min();
-            maximum = answersList.Max();
-            average = answersList.Average();
-            resultSet.AddRecord(question.Text, minimum, average, maximum);
+            if (answersList.Count > 0)
+            {
+                minimum = answersList.Min();
+                maximum = answersList.Max();
+                average = answersList.Average();
+                resultSet.AddRecord(question.Text, minimum, average, maximum);
+            }
             return resultSet;
         }
 

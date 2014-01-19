@@ -62,50 +62,94 @@ namespace PASOIU
 
             //pollDAO.Update(poll);
 
-            PollResultDAO resultDao = new PollResultDAO();            
+            PollResultDAO resultDao = new PollResultDAO();
 
-            PollResult result = new PollResult(poll);
-            result.AnswerTo(poll.GetQuestions()[0], "tst1");
-            result.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[2]);
-            result.AnswerTo(poll.GetQuestions()[2], "40000");
-            result.AnswerTo(poll.GetQuestions()[3], "80000");
-            result.AnswerTo(poll.GetQuestions()[4], "yes");
+            var results = resultDao.AllByPoll(poll);
 
-            resultDao.Create(result);
+            PollManager manager = new PollManager();
+            manager.AddAllResults(results.ToArray());
 
-            PollResult result2 = new PollResult(poll);
-            result2.AnswerTo(poll.GetQuestions()[0], "tst1");
-            result2.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[1]);
-            result2.AnswerTo(poll.GetQuestions()[2], "20000");
-            result2.AnswerTo(poll.GetQuestions()[3], "50000");
-            result2.AnswerTo(poll.GetQuestions()[4], "yes");
+            var forReport = new List<IQuestion>();
+            var forStats = new List<IQuestion>();
 
-            resultDao.Create(result2);
+
+            foreach (var question in poll.GetQuestions())
+            {
+                if (poll.HasAlternatives(question))
+                {
+                    forReport.Add(question);
+                }
+                else
+                {
+                    forStats.Add(question);
+                }
+            }
+
+            foreach (var question in forReport)
+            {
+                Console.WriteLine(question.Text);
+                Console.WriteLine();
+                var report = manager.AlternativesByQuestion(question).GetRecords();
+                foreach (var record in report)
+                {
+                    Console.WriteLine(
+                        String.Format("{0}\t{1}\t{2}", record.Item1, record.Item2, record.Item3)
+                        );
+                }
+            }
+
+            foreach (var question in forStats) {
+                Console.WriteLine(question.Text);
+                Console.WriteLine();
+                var report = manager.StatsOf(question).GetRecords();
+                foreach (var record in report)
+                {
+                    Console.WriteLine(String.Format("{0}\t{1}\t{2}", record.Min, record.Average, record.Max));
+                }
+            }
+
+//            PollResult result = new PollResult(poll);
+//            result.AnswerTo(poll.GetQuestions()[0], "tst1");
+//            result.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[2]);
+//            result.AnswerTo(poll.GetQuestions()[2], "40000");
+//            result.AnswerTo(poll.GetQuestions()[3], "80000");
+//            result.AnswerTo(poll.GetQuestions()[4], "yes");
+
+////            resultDao.Create(result);
+
+//            PollResult result2 = new PollResult(poll);
+//            result2.AnswerTo(poll.GetQuestions()[0], "tst1");
+//            result2.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[1]);
+//            result2.AnswerTo(poll.GetQuestions()[2], "20000");
+//            result2.AnswerTo(poll.GetQuestions()[3], "50000");
+//            result2.AnswerTo(poll.GetQuestions()[4], "yes");
+
+////            resultDao.Create(result2);
             
-            PollResult result3 = new PollResult(poll);
-            result3.AnswerTo(poll.GetQuestions()[0], "tst1");
-            result3.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[1]);
-            result3.AnswerTo(poll.GetQuestions()[2], "45000");
-            result3.AnswerTo(poll.GetQuestions()[3], "70000");
-            result3.AnswerTo(poll.GetQuestions()[4], "no");
+//            PollResult result3 = new PollResult(poll);
+//            result3.AnswerTo(poll.GetQuestions()[0], "tst1");
+//            result3.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[1]);
+//            result3.AnswerTo(poll.GetQuestions()[2], "45000");
+//            result3.AnswerTo(poll.GetQuestions()[3], "70000");
+//            result3.AnswerTo(poll.GetQuestions()[4], "no");
 
-            resultDao.Create(result3);
+////            resultDao.Create(result3);
 
-            PollResult result4 = new PollResult(poll);
-            result4.AnswerTo(poll.GetQuestions()[0], "tst1");
-            result4.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[3]);
-            result4.AnswerTo(poll.GetQuestions()[2], "30000");
-            result4.AnswerTo(poll.GetQuestions()[3], "40000");
-            result4.AnswerTo(poll.GetQuestions()[4], "no");
+//            PollResult result4 = new PollResult(poll);
+//            result4.AnswerTo(poll.GetQuestions()[0], "tst1");
+//            result4.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[3]);
+//            result4.AnswerTo(poll.GetQuestions()[2], "30000");
+//            result4.AnswerTo(poll.GetQuestions()[3], "40000");
+//            result4.AnswerTo(poll.GetQuestions()[4], "no");
 
-            resultDao.Create(result4);
+////            resultDao.Create(result4);
 
-            PollResult result5 = new PollResult(poll);
-            result5.AnswerTo(poll.GetQuestions()[0], "tst1");
-            result5.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[0]);
-            result5.AnswerTo(poll.GetQuestions()[2], "30000");
-            result5.AnswerTo(poll.GetQuestions()[3], "50000");
-            result5.AnswerTo(poll.GetQuestions()[4], "yes");
+//            PollResult result5 = new PollResult(poll);
+//            result5.AnswerTo(poll.GetQuestions()[0], "tst1");
+//            result5.SelectAlternative(poll.GetQuestions()[1], poll.GetAlternatives(poll.GetQuestions()[1])[0]);
+//            result5.AnswerTo(poll.GetQuestions()[2], "30000");
+//            result5.AnswerTo(poll.GetQuestions()[3], "50000");
+//            result5.AnswerTo(poll.GetQuestions()[4], "yes");
 
             //resultDao.Create(result5);
 

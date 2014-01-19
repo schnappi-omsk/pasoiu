@@ -16,5 +16,17 @@ namespace PASOIU
         {
             InitializeComponent();
         }
+
+        private void ввестиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var pollForm = new PollForm();
+            pollForm.Show();
+            pollForm = null;
+        }
+
+        private void выбратьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,19 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="System.Data.SqlServerCe" version="4.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PASOIU.exe" size="28160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PASOIU.exe" size="36864">
       <assemblyIdentity name="PASOIU" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zaXhmO5AcJ2wlJZWr0P1PICs0dsJPLxXZslGnbau3Os=</dsig:DigestValue>
+        <dsig:DigestValue>RGRoDsVSXBTlYC7xvWE8O81JYSL4URS6QilgAfQO1Xw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SqlServerCe.dll" size="470240">
+      <assemblyIdentity name="System.Data.SqlServerCe" version="4.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fzAjKmnGW7OJ3tIr3/LRns9mJFYblHB1es3oCxTi/k0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -70,13 +77,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="PASOIU.exe.config" size="499">
+  <file name="PASOIU.exe.config" size="452">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RXRDuqLnu6RKwYgg1Ky889zNpEOTU/nGDkgRFzQ8dHE=</dsig:DigestValue>
+      <dsig:DigestValue>vw4lCV5JJOSeOs8Hn19hw0QZzr3wkl59Ldh7guXsMaA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="sociologist.sdf" size="327680" writeableType="applicationData">
@@ -85,7 +92,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>r9iPY/YcP4kanUZRIUUHa/PNbVOV3142M9R2J0HssnE=</dsig:DigestValue>
+      <dsig:DigestValue>VRWnqF74npvfwtnVcpRRC9gQpoYA8HYAA2P4DSaQoEE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -1,0 +1,17 @@
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\PASOIU.exe.config
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\sociologist.sdf
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\PASOIU.exe.manifest
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\PASOIU.application
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\PASOIU.exe
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\PASOIU.pdb
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.MainForm.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.Properties.Resources.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.csproj.GenerateResource.Cache
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.exe.manifest
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.application
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.exe
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.pdb
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.csprojResolveAssemblyReference.cache
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\RU\System.Data.SqlServerCe.resources.dll
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.PollForm.resources
