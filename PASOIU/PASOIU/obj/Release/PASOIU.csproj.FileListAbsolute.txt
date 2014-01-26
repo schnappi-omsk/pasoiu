@@ -15,3 +15,7 @@ C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Relea
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\System.Data.SqlServerCe.dll
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\bin\Release\RU\System.Data.SqlServerCe.resources.dll
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.PollForm.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.AlternativesReportForm.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.InsertPoll.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.QuestionsChart.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Release\PASOIU.QuestionStatisticsForm.resources

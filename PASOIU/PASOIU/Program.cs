@@ -22,14 +22,14 @@ namespace PASOIU
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-            AllocConsole();
-            Test();
+            //AllocConsole();
+            //Test();
         }
 
         static void Test() 
         {
             var pollDAO = new PollDAO();
-            Poll poll = pollDAO.Read("test poll");//new Poll("test poll");
+            Poll poll = pollDAO.Read("test2");//new Poll("test poll");
 
             Console.WriteLine(poll.ToString());
 

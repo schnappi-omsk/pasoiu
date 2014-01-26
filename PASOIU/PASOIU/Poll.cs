@@ -11,7 +11,7 @@ namespace Domain
     {
         const string WHITESPACE = "____________";
 
-        const string SELECT_ALTERNATIVE = "Select one of alternatives: ";
+        const string SELECT_ALTERNATIVE = "Выберите один из вариантов: ";
         
         private string name;
 
@@ -20,7 +20,11 @@ namespace Domain
             get
             {
                 return name;
-            }            
+            }
+            set
+            {
+                this.name = value;
+            }
         }
 
         private List<IQuestion> questions = new List<IQuestion>();

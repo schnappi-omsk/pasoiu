@@ -33,14 +33,16 @@
             this.ввестиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выбратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.исследованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новоеИсследованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.альтернативыПоВопросамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вертикальнаяДиаграммаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаПоВопросамЧисловогоТипаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьИсследованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.variantLbl = new System.Windows.Forms.Label();
+            this.studentLbl = new System.Windows.Forms.Label();
+            this.workNameLbl = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,32 +68,24 @@
             // ввестиToolStripMenuItem
             // 
             this.ввестиToolStripMenuItem.Name = "ввестиToolStripMenuItem";
-            this.ввестиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ввестиToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.ввестиToolStripMenuItem.Text = "Выбрать";
             this.ввестиToolStripMenuItem.Click += new System.EventHandler(this.ввестиToolStripMenuItem_Click);
             // 
             // выбратьToolStripMenuItem
             // 
             this.выбратьToolStripMenuItem.Name = "выбратьToolStripMenuItem";
-            this.выбратьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.выбратьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.выбратьToolStripMenuItem.Text = "Ввести";
             this.выбратьToolStripMenuItem.Click += new System.EventHandler(this.выбратьToolStripMenuItem_Click);
             // 
             // исследованиеToolStripMenuItem
             // 
             this.исследованиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новоеИсследованиеToolStripMenuItem,
-            this.отчетыToolStripMenuItem,
-            this.удалитьИсследованиеToolStripMenuItem});
+            this.отчетыToolStripMenuItem});
             this.исследованиеToolStripMenuItem.Name = "исследованиеToolStripMenuItem";
             this.исследованиеToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.исследованиеToolStripMenuItem.Text = "Исследование";
-            // 
-            // новоеИсследованиеToolStripMenuItem
-            // 
-            this.новоеИсследованиеToolStripMenuItem.Name = "новоеИсследованиеToolStripMenuItem";
-            this.новоеИсследованиеToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.новоеИсследованиеToolStripMenuItem.Text = "Новое исследование";
             // 
             // отчетыToolStripMenuItem
             // 
@@ -108,31 +102,58 @@
             this.альтернативыПоВопросамToolStripMenuItem.Name = "альтернативыПоВопросамToolStripMenuItem";
             this.альтернативыПоВопросамToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
             this.альтернативыПоВопросамToolStripMenuItem.Text = "Альтернативы по вопросам";
+            this.альтернативыПоВопросамToolStripMenuItem.Click += new System.EventHandler(this.альтернативыПоВопросамToolStripMenuItem_Click);
             // 
             // вертикальнаяДиаграммаToolStripMenuItem
             // 
             this.вертикальнаяДиаграммаToolStripMenuItem.Name = "вертикальнаяДиаграммаToolStripMenuItem";
             this.вертикальнаяДиаграммаToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
             this.вертикальнаяДиаграммаToolStripMenuItem.Text = "Вертикальная диаграмма";
+            this.вертикальнаяДиаграммаToolStripMenuItem.Click += new System.EventHandler(this.вертикальнаяДиаграммаToolStripMenuItem_Click);
             // 
             // статистикаПоВопросамЧисловогоТипаToolStripMenuItem
             // 
             this.статистикаПоВопросамЧисловогоТипаToolStripMenuItem.Name = "статистикаПоВопросамЧисловогоТипаToolStripMenuItem";
             this.статистикаПоВопросамЧисловогоТипаToolStripMenuItem.Size = new System.Drawing.Size(300, 22);
             this.статистикаПоВопросамЧисловогоТипаToolStripMenuItem.Text = "Статистика по вопросам числового типа";
-            // 
-            // удалитьИсследованиеToolStripMenuItem
-            // 
-            this.удалитьИсследованиеToolStripMenuItem.Name = "удалитьИсследованиеToolStripMenuItem";
-            this.удалитьИсследованиеToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.удалитьИсследованиеToolStripMenuItem.Text = "Удалить исследование";
+            this.статистикаПоВопросамЧисловогоТипаToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоВопросамЧисловогоТипаToolStripMenuItem_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.workNameLbl);
+            this.panel1.Controls.Add(this.studentLbl);
+            this.panel1.Controls.Add(this.variantLbl);
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(777, 430);
             this.panel1.TabIndex = 1;
+            // 
+            // variantLbl
+            // 
+            this.variantLbl.AutoSize = true;
+            this.variantLbl.Location = new System.Drawing.Point(707, 409);
+            this.variantLbl.Name = "variantLbl";
+            this.variantLbl.Size = new System.Drawing.Size(58, 13);
+            this.variantLbl.TabIndex = 0;
+            this.variantLbl.Text = "Вариант 1";
+            // 
+            // studentLbl
+            // 
+            this.studentLbl.AutoSize = true;
+            this.studentLbl.Location = new System.Drawing.Point(578, 396);
+            this.studentLbl.Name = "studentLbl";
+            this.studentLbl.Size = new System.Drawing.Size(187, 13);
+            this.studentLbl.TabIndex = 1;
+            this.studentLbl.Text = "Выполнил Алексеев О.С., ku092aos";
+            // 
+            // workNameLbl
+            // 
+            this.workNameLbl.AutoSize = true;
+            this.workNameLbl.Location = new System.Drawing.Point(455, 383);
+            this.workNameLbl.Name = "workNameLbl";
+            this.workNameLbl.Size = new System.Drawing.Size(310, 13);
+            this.workNameLbl.TabIndex = 2;
+            this.workNameLbl.Text = "Курсовой проект по дисциплине \"Проектирование АСОИУ\"";
             // 
             // MainForm
             // 
@@ -146,6 +167,8 @@
             this.Text = "АРМ \"Социолог\"";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,13 +181,14 @@
         private System.Windows.Forms.ToolStripMenuItem исследованиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ввестиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выбратьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem новоеИсследованиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem альтернативыПоВопросамToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вертикальнаяДиаграммаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистикаПоВопросамЧисловогоТипаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьИсследованиеToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label workNameLbl;
+        private System.Windows.Forms.Label studentLbl;
+        private System.Windows.Forms.Label variantLbl;
     }
 }
 

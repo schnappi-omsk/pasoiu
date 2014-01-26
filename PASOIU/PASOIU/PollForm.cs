@@ -18,6 +18,10 @@ namespace PASOIU
 
         private PollDAO dao = new PollDAO();
 
+        private Dictionary<Alternative, RadioButton> buttons = new Dictionary<Alternative, RadioButton>();
+
+        private Dictionary<IQuestion, TextBox> textboxes = new Dictionary<IQuestion, TextBox>();
+
         private int vertical = 10;
 
         private int horizontal = 30;
@@ -42,6 +46,9 @@ namespace PASOIU
             var pollName = pollNameList.Text;
             if (pollName.Length > 0)
             {
+                pollPanel.Controls.Clear();
+                buttons.Clear();
+                textboxes.Clear();
                 poll = dao.Read(pollName);
                 ShowPoll();
             }
@@ -50,6 +57,8 @@ namespace PASOIU
         private void ShowPoll()
         {
             if (poll == null) return;
+            buttons.Clear();
+            textboxes.Clear();
             vertical = 10;
             foreach (var question in poll.GetQuestions())
             {
@@ -88,6 +97,7 @@ namespace PASOIU
             vertical += text.Height + 2;
 
             TextBox answerField = new TextBox();
+            textboxes.Add(question, answerField);
             answerField.Location = new Point(horizontal, vertical);
             pollPanel.Controls.Add(answerField);
 
@@ -114,10 +124,17 @@ namespace PASOIU
             int y = 5;
             int count = poll.GetAlternatives(question).Count;
             int heightSum = 0;
+            bool selected = false;
             foreach (var variant in poll.GetAlternatives(question))
             {
                 RadioButton alternative = new RadioButton();
-                alternative.Text = variant.Text;
+                if (!selected)
+                {
+                    alternative.Checked = true;
+                    selected = true;
+                }
+                alternative.Text = variant.Text;                
+                buttons.Add(variant, alternative);
                 alternative.Location = new Point(x, y);
                 variants.Controls.Add(alternative);
                 y += alternative.Height + 5;
@@ -129,6 +146,45 @@ namespace PASOIU
 
             DrawDivider();
             
+        }
+
+        private void sendButton_Click(object sender, EventArgs e)
+        {
+            if (poll == null) return;
+            var resultDao = new PollResultDAO();
+            var result = new PollResult(poll);
+            foreach (var current in textboxes.Keys)
+            {
+                result.AnswerTo(current, textboxes[current].Text);
+            }
+            foreach (var current in buttons.Keys)
+            {
+                if (buttons[current].Checked)
+                {
+                    result.SelectAlternative(current.Question, current);
+                }
+            }
+            resultDao.Create(result);
+            vertical = 10;
+            pollPanel.Controls.Clear();
+        }
+
+        private void printPoll_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            var g = e.Graphics;
+            var pollStr = poll.ToString();
+            Font pollFont = new Font("Arial", 16, System.Drawing.GraphicsUnit.Point);
+            g.DrawString(pollStr, pollFont, Brushes.Black, 30, 30);
+        }
+
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+            previewPoll.ShowDialog();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            if (poll != null) dao.Delete(poll);
         }
 
     }

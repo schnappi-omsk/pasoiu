@@ -15,3 +15,7 @@ C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.pdb
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.csprojResolveAssemblyReference.cache
 C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.PollForm.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.InsertPoll.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.AlternativesReportForm.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.QuestionStatisticsForm.resources
+C:\Users\schna_000\documents\visual studio 2012\Projects\PASOIU\PASOIU\obj\Debug\PASOIU.QuestionsChart.resources
